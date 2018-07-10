@@ -8,7 +8,7 @@ describe ParseSkus do
       before do
         Supplier.create(id: 1, name: 'Supplier A')
         Supplier.create(id: 2, name: 'Supplier B')
-        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'skus.csv'))
+        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'sku.csv'))
       end
 
       it "parse the file and skip incorrect values" do
@@ -16,7 +16,7 @@ describe ParseSkus do
       end
 
       it "insert only unique skus" do
-        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'skus.csv'))
+        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'sku.csv'))
         expect(Sku.count).to eq(7)
       end
 
@@ -24,7 +24,7 @@ describe ParseSkus do
 
     context "without corresponding Suppliers" do
       before do
-        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'skus.csv'))
+        ParseSkus.call(filename: Rails.root.join('test', 'fixtures', 'sku.csv'))
       end
 
       it "parse the file and skip incorrect values" do
