@@ -1,0 +1,79 @@
+<h3>Skus List</h3>
+
+<% if @skus.count > 0 %>
+  <table class='table table-striped table-bordered'>
+
+    <thead>
+      <tr>
+        <th>
+          Sku
+        </th>
+        <th>
+          Supplier
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Add Field 1
+        </th>
+        <th>
+          Add Field 2
+        </th>
+        <th>
+          Add Field 3
+        </th>
+        <th>
+          Add Field 4
+        </th>
+        <th>
+          Add Field 5
+        </th>
+        <th>
+          Price
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class='list'>
+      <% @skus.each do |sku| %>
+        <tr>
+          <td>
+            <%= sku.sku %>
+          </td>
+          <td>
+            <%= sku.supplier.name %>
+          </td>
+          <td>
+            <%= sku.name %>
+          </td>
+          <td>
+            <%= sku.add_field1 %>
+          </td>
+          <td>
+            <%= sku.add_field2 %>
+          </td>
+          <td>
+            <%= sku.add_field3 %>
+          </td>
+          <td>
+            <%= sku.add_field4 %>
+          </td>
+          <td>
+            <%= sku.add_field5 %>
+          </td>
+          <td>
+            <%= sku.price %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p>
+    <%== pagy_nav_bootstrap(@pagy) %>
+  </p>
+<% else %>
+  <p>
+    No skus in DB.
+  </p>
+<% end %>

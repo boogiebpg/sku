@@ -1,0 +1,14 @@
+<h3>Load CSV File</h3>
+<p>
+  <%= form_tag(upload_files_path, method: 'post', multipart: true) do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Submit', class: "btn btn-primary btn-lg"%>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'Suppliers List', suppliers_path %>
+</p>
+<p>
+  <%= link_to 'SKU List', skus_path %>
+</p>

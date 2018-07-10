@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  name: MyString
+  add_field1: MyString
+  add_field2: MyString
+  add_field3: MyString
+  add_field4: MyString
+  add_field5: MyString
+  price: 9.99
+
+two:
+  sku: MyString
+  name: MyString
+  add_field1: MyString
+  add_field2: MyString
+  add_field3: MyString
+  add_field4: MyString
+  add_field5: MyString
+  price: 9.99
