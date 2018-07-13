@@ -20,6 +20,16 @@ describe ParseSkus do
         expect(Sku.count).to eq(7)
       end
 
+      it "insert correct values to DB" do
+        expect(Sku.last.sku).to eq('Q69782')
+        expect(Sku.last.name).to eq('Brioncefunc Output Viewer')
+      end
+
+      it "updates sku with the same sku-value" do
+        sku = Sku.find_by_sku('W65985')
+        expect(sku.name).to eq('Rewrited Sku')
+      end
+
     end
 
     context "without corresponding Suppliers" do

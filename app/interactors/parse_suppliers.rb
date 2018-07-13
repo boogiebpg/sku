@@ -2,7 +2,6 @@ class ParseSuppliers
   include Interactor
 
   def call
-    # File.open(context.filename).each do |line|
     File.readlines(context.filename, chomp: true).each do |line|
       # we can also use CSV.foreach here
       id, name = line.split('¦')
